@@ -92,7 +92,7 @@ against USD 96/year for Raycast Pro.
 Homebrew Node explicitly:
 
 ```sh
-cd ~/Documents/zacharyzhuo/raycast-text-ai
+cd path/to/raycast-text-ai
 export PATH="/opt/homebrew/opt/node/bin:$PATH"
 npm run dev     # imports into Raycast, watches for changes; Ctrl-C when done
 ```
