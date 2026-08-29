@@ -1,0 +1,85 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "text-ai",
+  "title": "Text AI",
+  "description": "Translate and polish the selected text in place using an LLM API.",
+  "icon": "extension-icon.png",
+  "author": "zacharyzhuo",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "translate",
+      "title": "Translate Selection",
+      "subtitle": "Text AI",
+      "description": "Translate the selected text and show the result for review before pasting.",
+      "mode": "view"
+    },
+    {
+      "name": "polish",
+      "title": "Polish English Selection",
+      "subtitle": "Text AI",
+      "description": "Fix the grammar of the selected English text and show the result for review before pasting.",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "provider",
+      "title": "Provider",
+      "description": "Which LLM API to call.",
+      "type": "dropdown",
+      "required": true,
+      "default": "anthropic",
+      "data": [
+        {
+          "title": "Anthropic",
+          "value": "anthropic"
+        },
+        {
+          "title": "Google Gemini",
+          "value": "gemini"
+        }
+      ]
+    },
+    {
+      "name": "apiKey",
+      "title": "API Key",
+      "description": "Stored in the macOS Keychain by Raycast. Anthropic keys start with sk-ant-, Gemini keys with AIza.",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "workspaceId",
+      "title": "Workspace ID",
+      "description": "Anthropic only, and only for a multi-workspace personal or service account key. Value looks like wrkspc_01Jw... Find it at platform.claude.com/settings/workspaces. Leave empty for a single-workspace key or for Gemini.",
+      "type": "textfield",
+      "required": false,
+      "placeholder": "wrkspc_..."
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "description": "Anthropic: claude-haiku-4-5-20251001 (cheap) or claude-sonnet-5 (better Chinese). Gemini: gemini-2.5-flash.",
+      "type": "textfield",
+      "required": false,
+      "default": "claude-haiku-4-5-20251001",
+      "placeholder": "claude-haiku-4-5-20251001"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^2.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "lint": "ray lint"
+  }
+}
