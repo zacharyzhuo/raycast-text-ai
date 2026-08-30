@@ -41,6 +41,11 @@ preserve line breaks and Markdown.
 
 ## Setup
 
+> Installing on someone else's Mac? Point their AI agent at
+> [`docs/AI-INSTALL.md`](docs/AI-INSTALL.md), which covers the whole flow including the
+> Node version floor and the traps that are easy to hit.
+
+
 1. **Get an API key**
    - Anthropic: <https://console.anthropic.com/settings/keys> (key starts with `sk-ant-`)
    - or Google Gemini: <https://aistudio.google.com/apikey> (key starts with `AIza`)
